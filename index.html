@@ -9,9 +9,18 @@
 <link rel="canonical" href="https://media.mehdiagent.tech/"/>
 <meta property="og:title" content="Mehdi Agent | Creator Partnerships"/>
 <meta property="og:type" content="profile"/>
+<meta property="og:url" content="https://media.mehdiagent.tech/"/>
+<meta property="og:site_name" content="Mehdi Agent"/>
 <meta property="og:description" content="AI made useful. Audience insights, multi-platform distribution and brand collaborations with a Morocco-based creator."/>
-<meta property="og:image" content="portrait.webp"/>
+<meta property="og:image" content="https://media.mehdiagent.tech/portrait.webp"/>
+<meta property="og:image:width" content="1080"/>
+<meta property="og:image:height" content="1080"/>
+<meta property="og:image:alt" content="Mehdi Agent professional portrait"/>
+<meta property="og:locale" content="en_US"/>
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Mehdi Agent | Creator Partnerships"/>
+<meta name="twitter:description" content="AI made useful. Audience insights, multi-platform distribution and brand collaborations with a Morocco-based creator."/>
+<meta name="twitter:image" content="https://media.mehdiagent.tech/portrait.webp"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="portrait.webp">
@@ -71,6 +80,21 @@ img{max-width:100%}
 .nav-links a.nav-cta{color:var(--yellow-ink);background:var(--yellow);padding:9px 16px;border-radius:7px;font-weight:700}
 .nav-links a.nav-cta:hover{color:var(--yellow-ink)}
 
+#burger{display:none;position:relative;width:38px;height:38px;border:none;background:transparent;cursor:pointer;padding:0;flex-shrink:0;z-index:1001}
+#burger span{position:absolute;left:7px;right:7px;height:2px;background:var(--ink);border-radius:2px;transition:transform .3s,opacity .25s}
+#burger span:nth-child(1){top:13px}
+#burger span:nth-child(2){top:18px}
+#burger span:nth-child(3){top:23px}
+#burger[aria-expanded="true"] span:nth-child(1){transform:translateY(5px) rotate(45deg)}
+#burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+#burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-5px) rotate(-45deg)}
+
+#mobileMenu{display:none;position:fixed;inset:0;z-index:999;background:rgba(9,12,17,.98);backdrop-filter:blur(10px)}
+#mobileMenu.open{display:flex;align-items:center;justify-content:center}
+#mobileMenu nav{display:flex;flex-direction:column;align-items:center;gap:28px}
+#mobileMenu nav a{color:var(--ink);text-decoration:none;font-family:'Space Grotesk',sans-serif;font-size:30px;font-weight:600;letter-spacing:-.01em;padding:6px 12px}
+#mobileMenu nav a.mobile-cta{color:var(--yellow-ink);background:var(--yellow);border-radius:9px;padding:12px 22px;font-size:18px;margin-top:10px}
+
 .overline{display:inline-flex;align-items:center;gap:12px;font-weight:700;color:var(--yellow);font-size:11px;letter-spacing:.17em;text-transform:uppercase}
 .overline::before{content:'';width:26px;height:1.5px;background:var(--yellow)}
 .small{font-size:12px;color:var(--muted)}
@@ -85,7 +109,7 @@ img{max-width:100%}
 @keyframes float1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(4%,6%) scale(1.08)}}
 @keyframes float2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-5%,-4%) scale(1.1)}}
 
-.hero{position:relative;z-index:1;display:grid;grid-template-columns:1.18fr .82fr;gap:6%;align-items:center;padding:78px 0 70px}
+.hero{position:relative;z-index:1;display:grid;grid-template-columns:1.18fr .82fr;gap:6%;align-items:center;padding-top:78px;padding-bottom:70px}
 .live-tag{display:inline-flex;align-items:center;gap:9px;border:1px solid #3f5c43;background:rgba(24,40,29,.55);backdrop-filter:blur(6px);padding:9px 14px;border-radius:30px;color:#cae8c8;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase}
 .live-tag i{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(164,222,177,.6);animation:ping 2.4s ease-in-out infinite}
 @keyframes ping{0%,100%{box-shadow:0 0 0 0 rgba(164,222,177,.55)}50%{box-shadow:0 0 0 7px rgba(164,222,177,0)}}
@@ -152,7 +176,7 @@ img{max-width:100%}
 .chanhead span{font-size:10.5px;color:var(--yellow);letter-spacing:.06em;font-weight:700}
 .channel strong{font-size:34px;letter-spacing:-.02em;line-height:1.1;font-family:'Space Grotesk',sans-serif;font-weight:600}
 .channel p{color:var(--muted);font-size:13px;margin:0;min-height:39px}
-.channel a{font-size:12.5px;font-weight:700;color:var(--yellow);text-decoration:none;margin-top:auto;display:inline-flex;align-items:center;gap:5px}
+.channel a{font-size:12.5px;font-weight:700;color:var(--yellow);text-decoration:none;margin-top:auto;display:inline-flex;align-items:center;gap:5px;min-height:24px;padding:8px 0}
 .channel a:hover{text-decoration:underline}
 .channel .waiting{font-size:12.5px;color:#7c8894;margin-top:auto}
 
@@ -195,7 +219,7 @@ img{max-width:100%}
 .foot-brand p{color:var(--muted);font-size:13.5px;max-width:320px;line-height:1.6}
 .foot h4{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--yellow);margin:0 0 16px;font-weight:700}
 .foot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
-.foot a{color:#c3cad1;text-decoration:none;font-size:13.5px}
+.foot a{color:#c3cad1;text-decoration:none;font-size:13.5px;display:inline-block;padding:4px 0;min-height:24px}
 .foot a:hover{color:var(--ink);text-decoration:underline}
 .footrow{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-top:28px;border-top:1px solid var(--line);font-size:12px;color:#7c8894}
 
@@ -236,7 +260,9 @@ img{max-width:100%}
   .nav{min-height:68px}
   .nav-links{gap:13px}
   .nav-links .hide{display:none}
-  .hero{grid-template-columns:1fr;gap:34px;padding:52px 0 54px}
+  #burger{display:block}
+  .nav-links .nav-cta{display:none}
+  .hero{grid-template-columns:1fr;gap:34px;padding-top:52px;padding-bottom:54px}
   .hero h1{font-size:60px;margin-top:22px}
   .portrait-card{max-width:440px;aspect-ratio:5/4}
   .portrait-card img{object-position:50% 25%}
@@ -283,8 +309,20 @@ img{max-width:100%}
       <a class="hide" href="#work">Work</a>
       <a class="nav-cta" href="#contact">Let's collaborate ↗</a>
     </div>
+    <button id="burger" type="button" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+<div id="mobileMenu" aria-hidden="true">
+  <nav aria-label="Mobile">
+    <a href="#performance">Performance</a>
+    <a href="#ecosystem">Platforms</a>
+    <a href="#audience">Audience</a>
+    <a href="#work">Work</a>
+    <a href="#contact" class="mobile-cta">Let's collaborate ↗</a>
+  </nav>
+</div>
 
 <main id="top">
   <div class="hero-wrap">
@@ -311,7 +349,7 @@ img{max-width:100%}
     </div>
   </div>
 
-  <div class="marquee-wrap">
+  <div class="marquee-wrap" role="presentation" aria-hidden="true">
     <div class="marquee">
       <span><i></i>Instagram <b>20,295</b> followers</span>
       <span><i></i>TikTok <b>238.1K</b> views / 28d</span>
@@ -334,12 +372,12 @@ img{max-width:100%}
       <h2>Real numbers.<br/>Useful attention.</h2>
       <p class="section-intro">Content that connects practical AI education with a fast-growing Moroccan audience. Verified against first-party platform screenshots supplied by the creator.</p>
       <div class="kpis">
-        <article class="kpi" data-reveal><strong data-count="718.8" data-suffix="K">0</strong><span>Instagram views</span><small>Last 30 days</small></article>
-        <article class="kpi" data-reveal><strong data-count="337" data-suffix="K">0</strong><span>Instagram viewers</span><small>Last 30 days</small></article>
-        <article class="kpi" data-reveal><strong data-count="5282" data-prefix="+" data-sep="1">0</strong><span>Net new IG followers</span><small>Last 30 days</small></article>
-        <article class="kpi" data-reveal><strong data-count="238.1" data-suffix="K">0</strong><span>TikTok post views</span><small>Last 28 days</small></article>
+        <article class="kpi" data-reveal><strong data-count="718.8" data-suffix="K">718.8K</strong><span>Instagram views</span><small>30 days, late Sep–Oct 2026</small></article>
+        <article class="kpi" data-reveal><strong data-count="337" data-suffix="K">337K</strong><span>Instagram viewers</span><small>30 days, late Sep–Oct 2026</small></article>
+        <article class="kpi" data-reveal><strong data-count="5282" data-prefix="+" data-sep="1">+5,282</strong><span>Net new IG followers</span><small>30 days, late Sep–Oct 2026</small></article>
+        <article class="kpi" data-reveal><strong data-count="238.1" data-suffix="K">238.1K</strong><span>TikTok post views</span><small>Sep 22 – Oct 19, 2026</small></article>
       </div>
-      <p class="note">Instagram also reported 71,962 interactions and 88.1% of views from non-followers (30 days). TikTok's 28-day window is September 22–October 19, 2026. Figures are historical snapshots.</p>
+      <p class="note">Instagram also reported 71,962 interactions and 88.1% of views from non-followers across the same 30-day window. TikTok's 28-day window is September 22–October 19, 2026. Figures are self-reported from first-party Instagram and TikTok analytics screenshots captured by the creator in October 2026; the originals are available on request for brand verification. They are historical snapshots, not live or audited data.</p>
     </div>
   </section>
 
@@ -399,18 +437,18 @@ img{max-width:100%}
         <div class="chips">
           <span class="chip">AI tools</span><span class="chip">Ecommerce</span><span class="chip">Marketing</span><span class="chip">Automation</span><span class="chip">Career productivity</span>
         </div>
-        <p class="note">Instagram audience: 80.6% men; 92.3% ages 18–44; language indicators: Arabic 58.5% and French 30.2%.</p>
+        <p class="note">Instagram audience, per the platform's own analytics (October 2026 snapshot): 80.6% men; 92.3% ages 18–44; language indicators: Arabic 58.5% and French 30.2%.</p>
       </div>
       <div data-reveal>
         <span class="overline">Audience geography</span>
-        <div class="measure"><span>Morocco</span><div class="track"><div class="fill" data-w="86.4"></div></div><strong>86.4%</strong></div>
-        <div class="measure"><span>France</span><div class="track"><div class="fill" data-w="3.6"></div></div><strong>3.6%</strong></div>
-        <div class="measure"><span>Algeria</span><div class="track"><div class="fill" data-w="2.4"></div></div><strong>2.4%</strong></div>
+        <div class="measure"><span>Morocco</span><div class="track"><div class="fill" data-w="86.4" style="width:86.4%"></div></div><strong>86.4%</strong></div>
+        <div class="measure"><span>France</span><div class="track"><div class="fill" data-w="3.6" style="width:3.6%"></div></div><strong>3.6%</strong></div>
+        <div class="measure"><span>Algeria</span><div class="track"><div class="fill" data-w="2.4" style="width:2.4%"></div></div><strong>2.4%</strong></div>
         <div style="height:27px"></div>
         <span class="overline">Instagram audience ages</span>
-        <div class="measure"><span>18–24</span><div class="track"><div class="fill" data-w="23.4"></div></div><strong>23.4%</strong></div>
-        <div class="measure"><span>25–34</span><div class="track"><div class="fill" data-w="48.2"></div></div><strong>48.2%</strong></div>
-        <div class="measure"><span>35–44</span><div class="track"><div class="fill" data-w="20.7"></div></div><strong>20.7%</strong></div>
+        <div class="measure"><span>18–24</span><div class="track"><div class="fill" data-w="23.4" style="width:23.4%"></div></div><strong>23.4%</strong></div>
+        <div class="measure"><span>25–34</span><div class="track"><div class="fill" data-w="48.2" style="width:48.2%"></div></div><strong>48.2%</strong></div>
+        <div class="measure"><span>35–44</span><div class="track"><div class="fill" data-w="20.7" style="width:20.7%"></div></div><strong>20.7%</strong></div>
       </div>
     </div>
   </section>
@@ -516,7 +554,7 @@ img{max-width:100%}
   </div>
 </footer>
 
-<a class="fab" href="mailto:contact@mehdiagent.tech?subject=Mehdi%20Agent%20partnership"><span class="dotp"></span><span class="lbl">Let's talk</span><i class="fa-solid fa-arrow-up-right"></i></a>
+<a class="fab" href="mailto:contact@mehdiagent.tech?subject=Mehdi%20Agent%20partnership" aria-label="Email Mehdi Agent to discuss a partnership"><span class="dotp" aria-hidden="true"></span><span class="lbl">Let's talk</span><span class="fab-arrow" aria-hidden="true">&#8599;</span></a>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
@@ -542,6 +580,33 @@ document.addEventListener('DOMContentLoaded', function () {
   function updateNav(){ navEl.classList.toggle('on', window.scrollY > 40); }
   document.addEventListener('scroll', updateNav, { passive: true });
   updateNav();
+
+  /* mobile menu */
+  var burger = document.getElementById('burger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  function closeMenu(){
+    burger.setAttribute('aria-expanded', 'false');
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    burger.setAttribute('aria-label', 'Open menu');
+    document.body.style.overflow = '';
+  }
+  function openMenu(){
+    burger.setAttribute('aria-expanded', 'true');
+    mobileMenu.classList.add('open');
+    mobileMenu.setAttribute('aria-hidden', 'false');
+    burger.setAttribute('aria-label', 'Close menu');
+    document.body.style.overflow = 'hidden';
+  }
+  burger.addEventListener('click', function () {
+    (burger.getAttribute('aria-expanded') === 'true') ? closeMenu() : openMenu();
+  });
+  mobileMenu.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closeMenu);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeMenu();
+  });
 
   /* custom cursor */
   if (window.matchMedia('(hover:hover) and (pointer:fine)').matches) {
@@ -599,6 +664,7 @@ document.addEventListener('DOMContentLoaded', function () {
       ScrollTrigger.create({
         trigger: el, start: 'top 90%', once: true,
         onEnter: function () {
+          el.textContent = prefix + '0' + suffix;
           gsap.to(obj, {
             v: target, duration: 1.7, ease: 'expo.out',
             onUpdate: function () {
@@ -613,9 +679,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     /* audience bars */
     document.querySelectorAll('.fill').forEach(function (el) {
+      var target = el.getAttribute('data-w') + '%';
       ScrollTrigger.create({
         trigger: el, start: 'top 92%', once: true,
-        onEnter: function () { el.style.width = el.getAttribute('data-w') + '%'; }
+        onEnter: function () {
+          el.style.width = '0%';
+          requestAnimationFrame(function () { el.style.width = target; });
+        }
       });
     });
   } else {
